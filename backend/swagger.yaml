@@ -1,0 +1,200 @@
+openapi: 3.0.0
+info:
+  title: Node.js Sign-up and Verification API
+  version: 1.0.0
+  description: Node.js + MySQL - API with email sign-up, verification, authentication and forgot password
+
+servers:
+  - url: https://ipt-2026-backend-w9kn.onrender.com
+    description: Production server
+  - url: http://localhost:4000
+    description: Local development server
+
+paths:
+  /accounts/authenticate:
+    post:
+      summary: Authenticate account credentials and return a JWT token and a cookie with a refresh token
+      tags: [default]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: OK
+
+  /accounts/refresh-token:
+    post:
+      summary: Use a refresh token to generate a new JWT token and a new refresh token
+      tags: [default]
+      responses:
+        '200':
+          description: OK
+
+  /accounts/revoke-token:
+    post:
+      summary: Revoke a refresh token
+      tags: [default]
+      responses:
+        '200':
+          description: OK
+
+  /accounts/register:
+    post:
+      summary: Register a new user account and send a verification email
+      tags: [default]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+                confirmPassword:
+                  type: string
+                acceptTerms:
+                  type: boolean
+      responses:
+        '200':
+          description: OK
+
+  /accounts/verify-email:
+    post:
+      summary: Verify a new account with a verification token received by email after registration
+      tags: [default]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                token:
+                  type: string
+      responses:
+        '200':
+          description: OK
+
+  /accounts/forgot-password:
+    post:
+      summary: Submit email address to reset the password on an account
+      tags: [default]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+      responses:
+        '200':
+          description: OK
+
+  /accounts/validate-reset-token:
+    post:
+      summary: Validate the reset password token received by email
+      tags: [default]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                token:
+                  type: string
+      responses:
+        '200':
+          description: OK
+
+  /accounts/reset-password:
+    post:
+      summary: Reset the password for an account
+      tags: [default]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                token:
+                  type: string
+                password:
+                  type: string
+                confirmPassword:
+                  type: string
+      responses:
+        '200':
+          description: OK
+
+  /accounts:
+    get:
+      summary: Get a list of all accounts
+      tags: [default]
+      responses:
+        '200':
+          description: OK
+    post:
+      summary: Create a new account
+      tags: [default]
+      responses:
+        '200':
+          description: OK
+
+  /accounts/{id}:
+    get:
+      summary: Get a single account by id
+      tags: [default]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+    put:
+      summary: Update an account
+      tags: [default]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+    delete:
+      summary: Delete an account
+      tags: [default]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
