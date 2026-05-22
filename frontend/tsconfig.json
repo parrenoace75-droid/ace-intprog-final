@@ -1,4 +1,4 @@
-{
+"target": "ES2022"{
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
@@ -16,8 +16,8 @@
     "experimentalDecorators": true,
     "moduleResolution": "bundler",
     "importHelpers": true,
-    "target": "es2020",
-    "module": "es2020",
+    "target": "ES2022",
+    "module": "ES2022",
     "lib": [
       "ES2022",
       "dom"
