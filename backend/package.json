@@ -2,7 +2,7 @@
   "name": "mysql-api",
   "version": "1.0.0",
   "type": "module",
-  "description": "",
+  "description": "REST API with Express, MySQL, JWT Authentication",
   "main": "index.js",
   "scripts": {
     "start": "tsx server.ts",
@@ -10,7 +10,7 @@
     "build": "tsc"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ace Stefan",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^3.0.3",
