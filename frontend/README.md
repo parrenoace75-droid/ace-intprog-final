@@ -245,4 +245,11 @@ This frontend uses `withCredentials: true` for login/refresh/revoke, but the bac
 
 ```bash
 npm test
-```
+```## Setup
+npm install
+
+## Run
+npm start
+
+## Build
+npm run build
