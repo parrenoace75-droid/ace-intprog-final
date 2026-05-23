@@ -1,4 +1,4 @@
-"target": "ES2022"{
+{
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
