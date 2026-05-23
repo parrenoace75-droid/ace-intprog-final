@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    apiUrl: 'https://intprog-system-production.up.railway.app'
+    apiUrl: 'https://courageous-illumination-production-29c4.up.railway.app'
 };
