@@ -1,13 +1,13 @@
 {
     "database": {
-        "host": "turntable.proxy.rlwy.net",
-        "port": 55495,
-        "user": "root",
-        "password": "ZiIzrrISWSOekyxbImWirbhCBBuGTYdk",
-        "database": "railway"
+        "host": "153.92.15.31",
+        "port": 3306,
+        "user": "u875409848_2026_1",
+        "password": "s*3o^*xCA",
+        "database": "u875409848_2026_1"
     },
     "secret": "SUPER_SECRET_KEY_REPLACE_ME_IN_PRODUCTION",
-    "emailFrom": "lapisranzjunnel@gmail.com",
+    "emailFrom": "parrenoace75@gmail.com",
     "frontendUrl": "https://ace-intprog-final-production.up.railway.app",
     "smtpOptions": {
         "host": "smtp.gmail.com",
