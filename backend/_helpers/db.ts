@@ -2,8 +2,12 @@ import { Sequelize } from 'sequelize';
 import accountModel from '../accounts/account.model.js';
 import refreshTokenModel from '../accounts/refresh-token.model.js';
 import { readFileSync } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 
-const config = JSON.parse(readFileSync(new URL('../../config.json', import.meta.url), 'utf-8'));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const config = JSON.parse(readFileSync(join(__dirname, '../../config.json'), 'utf-8'));
 
 const db: any = {};
 export default db;
