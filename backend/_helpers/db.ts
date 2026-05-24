@@ -7,7 +7,7 @@ import { dirname, join } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-const config = JSON.parse(readFileSync(join(__dirname, '../../config.json'), 'utf-8'));
+const config = JSON.parse(readFileSync(join(__dirname, '../config.json'), 'utf-8'));
 
 const db: any = {};
 export default db;
